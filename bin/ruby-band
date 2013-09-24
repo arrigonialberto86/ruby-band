@@ -1,0 +1,83 @@
+#!/usr/bin/env ruby
+#
+# BioRuby ruby-band Plugin RubyBand
+# Author:: arrigonialberto86
+# Copyright:: 2013
+
+USAGE = "Describe ruby-band"
+
+gempath = File.dirname(File.dirname(__FILE__))
+$: << File.join(gempath,'lib')
+
+VERSION_FILENAME=File.join(gempath,'VERSION')
+version = File.new(VERSION_FILENAME).read.chomp
+
+# print banner
+print "ruby-band #{version} by arrigonialberto86 2013\n"
+
+if ARGV.size == 0
+  print USAGE
+end
+
+require 'ruby-band'
+require 'optparse'
+
+# Uncomment when using the bio-logger 
+# require 'bio-logger'
+# Bio::Log::CLI.logger('stderr')
+# Bio::Log::CLI.trace('info')
+
+options = {:example_switch=>false,:show_help=>false}
+opts = OptionParser.new do |o|
+  o.banner = "Usage: #{File.basename($0)} [options] reponame\ne.g. #{File.basename($0)} the-perfect-gem"
+
+  o.on('--example_parameter [EXAMPLE_PARAMETER]', 'TODO: put a description for the PARAMETER') do |example_parameter|
+    # TODO: your logic here, below an example
+    options[:example_parameter] = 'this is a parameter'
+  end
+  
+  o.separator ""
+  o.on("--switch-example", 'TODO: put a description for the SWITCH') do
+    # TODO: your logic here, below an example
+    self[:example_switch] = true
+  end
+
+  # Uncomment the following when using the bio-logger 
+  # o.separator ""
+  # o.on("--logger filename",String,"Log to file (default stderr)") do | name |
+  #   Bio::Log::CLI.logger(name)
+  # end
+  #
+  # o.on("--trace options",String,"Set log level (default INFO, see bio-logger)") do | s |
+  #   Bio::Log::CLI.trace(s)
+  # end
+  # 
+  # o.on("-q", "--quiet", "Run quietly") do |q|
+  #   Bio::Log::CLI.trace('error')
+  # end
+  # 
+  # o.on("-v", "--verbose", "Run verbosely") do |v|
+  #   Bio::Log::CLI.trace('info')
+  # end
+  # 
+  # o.on("--debug", "Show debug messages") do |v|
+  #   Bio::Log::CLI.trace('debug')
+  # end
+
+  o.separator ""
+  o.on_tail('-h', '--help', 'display this help and exit') do
+    options[:show_help] = true
+  end
+end
+
+begin
+  opts.parse!(ARGV)
+
+  # Uncomment the following when using the bio-logger 
+  # Bio::Log::CLI.configure('ruby-band')
+
+  # TODO: your code here
+  # use options for your logic
+rescue OptionParser::InvalidOption => e
+  options[:invalid_argument] = e.message
+end
