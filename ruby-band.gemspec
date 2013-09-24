@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".travis.yml",
     "Gemfile",
+    "Gemfile.lock",
     "Jarfile",
     "Jarfile.lock",
     "LICENSE.txt",
