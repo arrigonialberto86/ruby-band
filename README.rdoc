@@ -4,7 +4,7 @@ Data mining and machine learning algorithms for Ruby
 
 == Installation
 
-Install the  'jbundle' gem and 'bundle' for JRuby before trying to install the
+Install the 'jbundle' gem for JRuby before trying to install the
 'ruby-band' gem. Maven is also required for .jars automatic download and
 installation. On Ubuntu/Debian Maven should already be installed and on OSX
 system you can get it from Brew
@@ -16,7 +16,13 @@ Java classpath). Otherwise use:
 
     gem install ruby-band
 
+== Description
+
+ruby-band was created by Alberto Arrigoni as part of Google’s Summer of Code 2013. It is part of SciRuby.
+
 == Usage
+
+For a short tutorial on ruby-band functions and capabilities please visit our wiki section here on Github
 
 == Developers
 
@@ -35,6 +41,20 @@ Information on the source tree, documentation, issues and how to contribute, see
 
 The BioRuby community is on IRC server: irc.freenode.org, channel: #bioruby.
 
+== Contributing to ruby-band
+ 
+ ruby-band is part of SciRuby, a collaborative effort to bring scientific computation to Ruby. If you want to help, please do so!
+
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
+* Fork the project.
+* Start a feature/bugfix branch.
+* Commit and push until you are happy with your contribution.
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally. Cucumber tests (stored in the 'features' folder) are a great way to draft 
+tutorial sections along with tests.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+
 == Cite
 
   If you use this software, please cite one of
@@ -42,12 +62,9 @@ The BioRuby community is on IRC server: irc.freenode.org, channel: #bioruby.
 * [BioRuby: bioinformatics software for the Ruby programming language](http://dx.doi.org/10.1093/bioinformatics/btq475)
 * [Biogem: an effective tool-based approach for scaling up open source software development in bioinformatics](http://dx.doi.org/10.1093/bioinformatics/bts080)
 
-== Biogems.info
 
-This Biogem is published at http://biogems.info/index.html#ruby-band
+== License
 
-== Copyright
-
-Copyright (c) 2013 arrigonialberto86. See LICENSE.txt for
-further details.
+Copyright (c) 2010–13, The Ruby Science Foundation.
+All rights reserved. See LICENSE.txt for further details.
 

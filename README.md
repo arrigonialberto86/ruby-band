@@ -21,7 +21,7 @@ Java classpath). Otherwise use:
 
 ## Usage
 
-## Dataset parsing
+### Dataset parsing
 One central datatype of ruby-band is derived from the Weka counterpart (the class Weka.core.Instances). By instantiating this class, we obtain a matrix-like structure for storing an entire dataset. Ad-hoc methods were created to guarantee that 'Instances' class objects can be converted to other datatypes (e.g. Apache matrix) and back.
 There are currently many ways to import data into ruby-band. 
 ### Parsing data from ARFF/CSV files
@@ -315,10 +315,6 @@ If you use this software, please cite one of
     software development in
     bioinformatics](http://dx.doi.org/10.1093/bioinformatics/bts080)
 
-
-## Biogems.info
-
-This Biogem is published at http://biogems.info/index.html#ruby-band
 
 ## Copyright
 
