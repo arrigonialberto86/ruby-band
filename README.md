@@ -1,8 +1,7 @@
 # ruby-band
 
 [<img
-src="https://travis-ci.org/arrigonialberto86/ruby-band.png"/>](http://travi
-s-ci.org/#!/arrigonialberto86/ruby-band)
+src="https://travis-ci.org/arrigonialberto86/ruby-band.png"/>](https://travis-ci.org/arrigonialberto86/ruby-band)
 
 Data mining and machine learning algorithms for Ruby
 
