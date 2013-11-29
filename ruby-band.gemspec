@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["arrigonialberto86"]
-  s.date = "2013-09-24"
+  s.date = "2013-11-29"
   s.description = "Data mining and machine learning algorithms for JRuby "
   s.email = "arrigonialberto86@gmail.com"
   s.executables = ["ruby-band"]
@@ -123,7 +123,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<jbundler>, ["= 0.4.3"])
       s.add_runtime_dependency(%q<ruport>, [">= 0"])
       s.add_runtime_dependency(%q<json>, [">= 0"])
-      s.add_runtime_dependency(%q<multi_json>, [">= 0"])
+      s.add_runtime_dependency(%q<multi_json>, [">= 1.8.0"])
       s.add_runtime_dependency(%q<gherkin>, [">= 0"])
       s.add_runtime_dependency(%q<git>, [">= 0"])
       s.add_runtime_dependency(%q<shoulda>, [">= 0"])
@@ -142,7 +142,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jbundler>, ["= 0.4.3"])
       s.add_dependency(%q<ruport>, [">= 0"])
       s.add_dependency(%q<json>, [">= 0"])
-      s.add_dependency(%q<multi_json>, [">= 0"])
+      s.add_dependency(%q<multi_json>, [">= 1.8.0"])
       s.add_dependency(%q<gherkin>, [">= 0"])
       s.add_dependency(%q<git>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
@@ -162,7 +162,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jbundler>, ["= 0.4.3"])
     s.add_dependency(%q<ruport>, [">= 0"])
     s.add_dependency(%q<json>, [">= 0"])
-    s.add_dependency(%q<multi_json>, [">= 0"])
+    s.add_dependency(%q<multi_json>, [">= 1.8.0"])
     s.add_dependency(%q<gherkin>, [">= 0"])
     s.add_dependency(%q<git>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])

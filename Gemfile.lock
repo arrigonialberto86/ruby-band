@@ -48,7 +48,7 @@ GEM
     jwt (0.1.8)
       multi_json (>= 1.5)
     maven-tools (0.32.5)
-    multi_json (1.8.0)
+    multi_json (1.8.2)
     multi_test (0.0.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
@@ -109,7 +109,7 @@ DEPENDENCIES
   jbundler (= 0.4.3)
   jeweler (~> 1.8.4)
   json
-  multi_json
+  multi_json (>= 1.8.0)
   rake
   rdoc (~> 3.12)
   rspec

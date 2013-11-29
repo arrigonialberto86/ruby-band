@@ -11,7 +11,7 @@ platforms :jruby do
   gem "jbundler", "0.4.3"
   gem "ruport"
   gem "json"
-  gem "multi_json"
+  gem "multi_json",">= 1.8.0"
   gem "gherkin"
   gem "git"
   gem "shoulda", ">= 0"
