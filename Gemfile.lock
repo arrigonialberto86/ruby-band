@@ -97,6 +97,7 @@ GEM
 
 PLATFORMS
   java
+  ruby
 
 DEPENDENCIES
   activesupport (= 3.2.13)

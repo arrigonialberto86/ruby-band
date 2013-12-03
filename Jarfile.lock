@@ -1,3 +1,4 @@
+org.sonatype.aether:aether-api:jar:1.1
 nz.ac.waikato.cms.weka:weka-stable:jar:3.6.10
 net.sf.squirrel-sql.thirdparty-non-maven:java-cup:jar:0.11a
 org.apache.commons:commons-math3:jar:3.0

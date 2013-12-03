@@ -1,3 +1,4 @@
+jar 'org.sonatype.aether:aether-api','1.1'
 jar 'nz.ac.waikato.cms.weka:weka-stable','3.6.10'
 jar 'org.apache.commons:commons-math3','3.0'
 jar 'junit:junit','3.8.1'
