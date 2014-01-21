@@ -13,13 +13,14 @@ module Weka
 
 			class KStar
 				include Lazy_utils
+
 				class Base < KStar
           def initialize(&block)
             super
             if block_given?
               init_instance_classifier(&block)
             else
-              init_classifier  
+              init_lazy  
             end
           end
 				end
@@ -33,7 +34,7 @@ module Weka
             if block_given?
               init_instance_classifier(&block)
             else
-              init_classifier  
+              init_lazy  
             end
           end
         end
@@ -47,7 +48,7 @@ module Weka
             if block_given?
               init_instance_classifier(&block)
             else
-              init_classifier  
+              init_lazy  
             end
           end
         end
@@ -61,7 +62,7 @@ module Weka
             if block_given?
               init_instance_classifier(&block)
             else
-              init_classifier  
+              init_lazy 
             end
           end
         end
@@ -75,7 +76,7 @@ module Weka
             if block_given?
               init_instance_classifier(&block)
             else
-              init_classifier  
+              init_lazy
             end
           end
         end
