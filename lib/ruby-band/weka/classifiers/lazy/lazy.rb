@@ -1,87 +1,21 @@
 $:.unshift File.dirname(__FILE__)
-require 'lazy_utils'
 
+require_relative '../class_builder'
+
+#
+# The Weka::Classifier::Lazy module contains classifiers from the 'weka.classifiers.lazy' package
+# New weka classes can be defined by adding them to the build_classes method.
+#
 module Weka
 	module Classifier
 		module Lazy
+      include ClassBuilder::Classifiers
 
-      java_import 'weka.classifiers.lazy.KStar' 
-      java_import 'weka.classifiers.lazy.LWL' 
-      java_import 'weka.classifiers.lazy.LBR'
-      java_import 'weka.classifiers.lazy.IB1'
-      java_import 'weka.classifiers.lazy.IBk'
-
-			class KStar
-				include Lazy_utils
-
-				class Base < KStar
-          def initialize(&block)
-            super
-            if block_given?
-              init_instance_classifier(&block)
-            else
-              init_lazy  
-            end
-          end
-				end
-			end
-
-      class LWL
-        include Lazy_utils
-        class Base < LWL
-          def initialize(&block)
-            super
-            if block_given?
-              init_instance_classifier(&block)
-            else
-              init_lazy  
-            end
-          end
-        end
-      end
-
-      class LBR
-        include Lazy_utils
-        class Base < LBR
-          def initialize(&block)
-            super
-            if block_given?
-              init_instance_classifier(&block)
-            else
-              init_lazy  
-            end
-          end
-        end
-      end
-
-      class IB1
-        include Lazy_utils
-        class Base < IB1
-          def initialize(&block)
-            super
-            if block_given?
-              init_instance_classifier(&block)
-            else
-              init_lazy 
-            end
-          end
-        end
-      end
-
-      class IBk
-        include Lazy_utils
-        class Base < IBk
-          def initialize(&block)
-            super
-            if block_given?
-              init_instance_classifier(&block)
-            else
-              init_lazy
-            end
-          end
-        end
-      end
-
+      build_classes :KStar,
+                    :LWL,
+                    :LBR,
+                    :IB1,
+                    :IBk
     end
   end
 end
