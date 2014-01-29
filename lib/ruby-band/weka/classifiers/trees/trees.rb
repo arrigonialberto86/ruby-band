@@ -1,110 +1,25 @@
 $:.unshift File.dirname(__FILE__)
-require 'trees_utils'
 
+require_relative '../class_builder'
+
+#
+# The Weka::Classifier::Trees module contains classifiers from the 'weka.classifiers.trees' package
+# New weka classes can be defined by adding them to the build_classes method.
+#
 module Weka
 	module Classifier
-    #This module contains classifiers from the 'weka.classifiers.trees' package
 		module Trees
-      java_import 'weka.classifiers.trees.J48'
-      java_import 'weka.classifiers.trees.FT'
-      java_import 'weka.classifiers.trees.RandomForest'
-      java_import 'weka.classifiers.trees.BFTree'
-      java_import 'weka.classifiers.trees.J48graft'
-      java_import 'weka.classifiers.trees.LADTree'
-      java_import 'weka.classifiers.trees.LMT'
-      java_import 'weka.classifiers.trees.M5P'
-      java_import 'weka.classifiers.trees.RandomTree'
+      include ClassBuilder::Classifiers
 
-      class ADTree
-        include Trees_utils
-        class Base < ADTree
-          def initialize
-            super
-            init_tree
-          end
-        end
-      end
-
-      class BFTree
-        include Trees_utils
-        class Base < BFTree
-          def initialize
-            super
-            init_tree
-          end
-        end
-      end
-
-      class FT
-        include Trees_utils
-        class Base < FT
-          def initialize
-            super
-            init_tree
-          end
-        end
-      end
-
-      class J48
-        include Trees_utils
-        class Base < J48
-          def initialize
-            super
-            init_tree
-          end
-        end
-      end
-
-      class J48graft
-        include Trees_utils
-        class Base < J48graft
-          def initialize
-            super
-            init_tree
-          end
-        end
-      end
-
-      class LMT
-        include Trees_utils
-        class Base < LMT
-          def initialize
-            super
-            init_tree
-          end
-        end
-      end
-
-      class M5P
-        include Trees_utils
-        class Base < M5P
-          def initialize
-            super
-            init_tree
-          end
-        end
-      end
-
-      class RandomForest
-        include Trees_utils
-        class Base < RandomForest
-          def initialize
-            super
-            init_tree
-          end
-        end
-      end
-
-      class RandomTree
-        include Trees_utils
-        class Base < RandomTree
-          def initialize
-            super
-            init_tree
-          end
-        end
-      end
-
+      build_classes :J48,
+                    :FT,
+                    :RandomForest,
+                    :BFTree,
+                    :J48graft,
+                    :LADTree,
+                    :LMT,
+                    :M5P,
+                    :RandomTree
 		end
   end
 end
