@@ -31,7 +31,7 @@ module ClassifierUtils
 
   #Set a class index for the input dataset
   def set_class_index(class_index)
-    @class_index = class_index 
+    @class_index = class_index
   end
 
   #Set options for the selected classfier
@@ -57,13 +57,13 @@ module ClassifierUtils
   # fold -> 'int' value
   def cross_validate(fold)
     if self.class.data
-      eval = Weka::Classifier::Evaluation.new self.class.data
-      eval.crossValidateModel(self.class.ancestors[2].new, self.class.data, fold.to_java(:int), Random.new(1))
-      eval.summary 
+      evaluation = Weka::Classifier::Evaluation.new self.class.data
+      evaluation.crossValidateModel(self.class.ancestors[2].new, self.class.data, fold.to_java(:int), Random.new(1))
+      evaluation
     else
-      eval = Weka::Classifier::Evaluation.new @dataset
-      eval.crossValidateModel(self.class.ancestors[1].new, @dataset, fold.to_java(:int), Random.new(1))
-      eval.summary
+      evaluation = Weka::Classifier::Evaluation.new @dataset
+      evaluation.crossValidateModel(self.class.ancestors[1].new, @dataset, fold.to_java(:int), Random.new(1))
+      evaluation
     end
   end
 

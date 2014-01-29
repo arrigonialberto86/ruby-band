@@ -24,6 +24,45 @@ Feature: Using a Weka classifier
     And I want to print a summary for the dataset
     And I want to set the class index for attribute with index "<index>"
     And I want to instantiate the classifier for my use
+    And I want to cross validate the classifier
+    And I want to get the summary of the evaluation
+    And I want to get the class details of the evaluation
+    And I want to get the cumulative margin distribution of the evaluation
+    And I want to get the precision of the evaluation with the class index
+    And I want to get the recall of the evaluation with the class index
+    And I want to get the weighted precision of the evaluation
+    And I want to get the weighted recall of the evaluation
+    And I want to get the true negative rate of the evaluation with the class index
+    And I want to get the true positive rate of the evaluation with the class index
+    And I want to get the false positive rate of the evaluation with the class index
+    And I want to get the false negative rate of the evaluation with the class index
+    And I want to get the weighted true negative rate of the evaluation
+    And I want to get the weighted true positive rate of the evaluation
+    And I want to get the weighted false positive rate of the evaluation
+    And I want to get the weighted false negative rate of the evaluation
+    And I want to get the true negative count of the evaluation with the class index
+    And I want to get the true positive count of the evaluation with the class index
+    And I want to get the false negative count of the evaluation with the class index
+    And I want to get the false positive count of the evaluation with the class index
+    And I want to get the Fmeasure of the evaluation with the class index
+    And I want to get the F-measure of the evaluation with the class index
+    And I want to get the weighted Fmeasure of the evaluation
+    And I want to get the weighted F-measure of the evaluation
+    And I want to get the area under ROC of the evaluation with the class index
+    And I want to get the weighted area under ROC of the evaluation
+    And I want to get the error rate of the evaluation
+    And I want to get the instance count of the evaluation
+    And I want to get the correct count of the evaluation
+    And I want to get the incorrect count of the evaluation
+    And I want to get the unclassified count of the evaluation
+    And I want to get the correct percentage of the evaluation
+    And I want to get the incorrect percentage of the evaluation
+    And I want to get the unclassified percentage of the evaluation
+    And I want to get the SF entropy gain of the evaluation
+    And I want to get the KB mean information of the evaluation
+    And I want to get the confusion matrix of the evaluation
+    And I want to get the total cost of the evaluation
+    And I want to get the average cost of the evaluation
 
   Examples: Classifiers
     | classifier            | options | index | file                 |

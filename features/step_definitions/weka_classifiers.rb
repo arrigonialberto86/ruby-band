@@ -43,8 +43,7 @@ Then(/^I want to set the class index for attribute with index "(.*?)"$/) do |arg
 end
 
 Then(/^I want to instantiate the classifier for my use$/) do
-  classifier = @classifier_class.new
-  classifier.cross_validate(2)
+  @classifier_instance = @classifier_class.new
 end
 
 Then(/^I am able to instantiate the classifier with a block$/) do
@@ -57,4 +56,18 @@ Then(/^I am able to instantiate the classifier with a block$/) do
     set_data dataset
     set_class_index class_index
   end
+end
+
+Then(/^I want to cross validate the classifier$/) do
+  @evaluation = @classifier_instance.cross_validate(2)
+  @evaluation.should be_a Weka::Classifier::Evaluation
+end
+
+And(/^I want to get the (.*?) of the evaluation\s?(.*?)$/) do |info, with_class_index|
+  method_name = info.downcase.strip.gsub(/[ -]/, '_').to_sym
+  @evaluation.should respond_to method_name
+
+  information = @evaluation.send(method_name) if with_class_index.blank?
+  information = @evaluation.send(method_name, @class_index.to_i) unless with_class_index.blank?
+  information.should_not be_blank
 end
