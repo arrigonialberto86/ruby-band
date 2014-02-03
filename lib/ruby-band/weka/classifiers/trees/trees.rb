@@ -1,15 +1,11 @@
-$:.unshift File.dirname(__FILE__)
+require 'ruby-band/weka/classifiers/class_builder'
 
-require_relative '../class_builder'
-
-#
-# The Weka::Classifier::Trees module contains classifiers from the 'weka.classifiers.trees' package
+# The Weka::Classifiers::Trees module contains classifiers from the 'weka.classifiers.trees' package
 # New weka classes can be defined by adding them to the build_classes method.
-#
 module Weka
-	module Classifier
-		module Trees
-      include ClassBuilder::Classifiers
+  module Classifiers
+    module Trees
+      include ClassBuilder
 
       build_classes :J48,
                     :FT,
@@ -20,6 +16,6 @@ module Weka
                     :LMT,
                     :M5P,
                     :RandomTree
-		end
+    end
   end
 end

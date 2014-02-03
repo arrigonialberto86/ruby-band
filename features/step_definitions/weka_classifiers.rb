@@ -1,5 +1,5 @@
-Given(/^the Weka "(.*?)" classifier$/) do |arg1|
-  @classifier = "Weka::Classifier::#{arg1}".constantize.new
+Given(/^the Weka "(.*?)" classifier$/) do |class_name|
+  @classifier = "Weka::Classifiers::#{class_name}".constantize.new
 end
 
 Then(/^I want to print a "(.*?)"$/) do |arg1|
@@ -11,7 +11,7 @@ Then(/^I want to print an options list$/) do
 end
 
 Given(/^the unsupervised Weka classifier "(.*?)"$/) do |class_name|
-  class_name = "Weka::Classifier::#{class_name}::Base".constantize
+  class_name = "Weka::Classifiers::#{class_name}::Base".constantize
   @classifier_class = Class.new class_name
 end
 
@@ -60,7 +60,7 @@ end
 
 Then(/^I want to cross validate the classifier$/) do
   @evaluation = @classifier_instance.cross_validate(2)
-  @evaluation.should be_a Weka::Classifier::Evaluation
+  @evaluation.should be_a Weka::Classifiers::Evaluation
 end
 
 And(/^I want to get the (.*?) of the evaluation\s?(.*?)$/) do |info, with_class_index|

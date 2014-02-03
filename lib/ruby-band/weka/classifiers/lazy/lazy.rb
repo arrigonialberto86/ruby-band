@@ -1,15 +1,12 @@
-$:.unshift File.dirname(__FILE__)
+require 'ruby-band/weka/classifiers/class_builder'
 
-require_relative '../class_builder'
-
-#
-# The Weka::Classifier::Lazy module contains classifiers from the 'weka.classifiers.lazy' package
+# The Weka::Classifiers::Lazy module contains classifiers from the 'weka.classifiers.lazy' package
 # New weka classes can be defined by adding them to the build_classes method.
 #
 module Weka
-	module Classifier
-		module Lazy
-      include ClassBuilder::Classifiers
+  module Classifiers
+    module Lazy
+      include ClassBuilder
 
       build_classes :KStar,
                     :LWL,

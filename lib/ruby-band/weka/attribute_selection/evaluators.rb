@@ -1,10 +1,10 @@
-$:.unshift File.dirname(__FILE__)
-require 'attribute_selection_utils'
+require 'ruby-band/weka/attribute_selection/utils'
 
 module Weka
-  module Attribute_selection
+  module AttributeSelection
+
+    # This module contains evaluators from the 'weka.attributeSelection' packages
     module Evaluator
-      #This module contains evaluators from the 'weka.attributeSelection' packages
       java_import 'weka.attributeSelection.CfsSubsetEval'
       java_import 'weka.attributeSelection.ChiSquaredAttributeEval'
       java_import 'weka.attributeSelection.ClassifierSubsetEval'
@@ -17,40 +17,40 @@ module Weka
       java_import 'weka.attributeSelection.SVMAttributeEval'
 
       class CfsSubsetEval
-        include Attribute_selection_Utils 
+        include Utils
       #  java_alias :use_options , :setOptions, [Java::Java.lang.String[]]
       end
 
       class ChiSquaredAttributeEval
-        include Attribute_selection_Utils  
+        include Utils
       end
 
       class ClassifierSubsetEval
-        include Attribute_selection_Utils  
+        include Utils
       end
 
       class ConsistencySubsetEval
-        include Attribute_selection_Utils  
+        include Utils
       end
 
       class CostSensitiveSubsetEval
-        include Attribute_selection_Utils  
+        include Utils
       end
 
       class FilteredAttributeEval
-        include Attribute_selection_Utils  
+        include Utils
       end      
 
       class FilteredSubsetEval
-        include Attribute_selection_Utils  
+        include Utils
       end
 
       class GainRatioAttributeEval
-        include Attribute_selection_Utils  
+        include Utils
       end
 
       class SVMAttributeEval
-        include Attribute_selection_Utils  
+        include Utils
       end
 
     end 

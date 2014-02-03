@@ -12,7 +12,7 @@ response_list =  RestClient.get "#{address}datasets", :cookies => response_old.c
 puts response_list
 
 # use filter on the training dataset
-RestClient.get "#{address}filter?filter_name=Filter::Unsupervised::Attribute::Discretize&&filter_options=-K_3&&dataset_in=dataset_1&&dataset_out=filtered_training_set",:cookies => response_old.cookies
+RestClient.get "#{address}filter?filter_name=Filters::Unsupervised::Attribute::Discretize&&filter_options=-K_3&&dataset_in=dataset_1&&dataset_out=filtered_training_set",:cookies => response_old.cookies
                                
 puts 'List of the datasets + the filtered training set'
 response_list =  RestClient.get "#{address}datasets", :cookies => response_old.cookies
@@ -23,7 +23,7 @@ puts  RestClient.get "#{address}datasets/dataset_1", :cookies => response_old.co
 
 
 puts 'Train a classifier on the dataset_1:'
-puts RestClient.get "#{address}train_classifier?classifier_name=Classifier::Bayes::NaiveBayes&&classifier_options=-K&&dataset_in=dataset_1&&model_name=naive_classifier&&class_index=0",:cookies => response_old.cookies
+puts RestClient.get "#{address}train_classifier?classifier_name=Classifiers::Bayes::NaiveBayes&&classifier_options=-K&&dataset_in=dataset_1&&model_name=naive_classifier&&class_index=0",:cookies => response_old.cookies
 
 puts 'List all the trained classifiers:'
 puts  RestClient.get "#{address}classifiers", :cookies => response_old.cookies

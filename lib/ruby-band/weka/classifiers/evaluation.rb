@@ -1,5 +1,5 @@
 module Weka
-  module Classifier
+  module Classifiers
     java_import 'weka.classifiers.Evaluation'
 
     # Weka Evaluation class to be used with classfiers
