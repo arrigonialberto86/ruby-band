@@ -3,7 +3,7 @@ Given(/^the ARFF dataset stored in the file "(.*?)"$/) do |arg1|
 end
 
 Given(/^the SimpleKMeans algorithm implementation from Weka$/) do
-  @clusterer = Weka::Clusterer::SimpleKMeans.new
+  @clusterer = Weka::Clusterers::SimpleKMeans.new
 end
 
 Then(/^I want to parse the data from the file$/) do
@@ -15,7 +15,7 @@ Then(/^I want to list the options available for SimpleKMeans$/) do
 end
 
 Then(/^I want to set K = "(.*?)" as K\-means option$/) do |arg1|
-  class Clustering < Weka::Clusterer::SimpleKMeans::Base
+  class Clustering < Weka::Clusterers::SimpleKMeans::Base
   end
   Clustering.set_options "-N #{arg1}"
 end

@@ -3,16 +3,21 @@ Given(/^the example ARFF file "(.*?)"$/) do |arff_file|
 end
 
 Given(/^the Weka Attribute Add filter$/) do
-  @filter = Weka::Filter::Unsupervised::Attribute::Add.new
+  @filter = Weka::Filters::Unsupervised::Attribute::Add.new
+end
+
+Given(/^the Weka Attribute NominalToBinary filter$/) do
+  @filter = Weka::Filters::Supervised::Attribute::NominalToBinary.new
 end
 
 Then(/^I want to parse the file in order to create an Instances class object$/) do
   $dataset_ARFF = Core::Parser::parse_ARFF(@arff)
+  $dataset_ARFF.class_index = 4
   puts $dataset_ARFF.summary
 end
 
 Then(/^I want to print the available filter options and usage$/) do
-  @filter.options_list
+  puts @filter.options_list
 end
 
 Then(/^I want to set the option String "(.*?)"$/) do |arg1|
@@ -23,10 +28,10 @@ Then(/^I want to set the option String "(.*?)"$/) do |arg1|
   end
 end
 
-Then(/^I want to add an attribute \(a column\) to the dataset using the Weka filter Add$/) do
+Then(/^I want to apply the filter on the dataset$/) do
   @new_inst = @filter.use
 end
 
 Then(/^I want to print a "(.*?)" for the modified dataset$/) do |arg1|
-  @new_inst.send arg1.to_sym
+  puts @new_inst.send arg1.to_sym
 end

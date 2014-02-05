@@ -1,11 +1,10 @@
-$:.unshift File.dirname(__FILE__)
-require 'attribute_selection_utils'
+require 'ruby-band/weka/attribute_selection/utils'
 
 module Weka
-  module Attribute_selection
-    #This module contains search algorithms from the 'weka.attributeSelection' packages
+  module AttributeSelection
+
+    # This module contains search algorithms from the 'weka.attributeSelection' packages
     module Search
-      
       java_import 'weka.attributeSelection.GreedyStepwise'
       java_import 'weka.attributeSelection.RankSearch'
       java_import 'weka.attributeSelection.Ranker'
@@ -16,35 +15,35 @@ module Weka
       java_import 'weka.attributeSelection.ScatterSearchV1'
 
       class GreedyStepwise
-        include Attribute_selection_Utils 
+        include Utils
       end
 
       class Ranker
-        include Attribute_selection_Utils 
+        include Utils
       end
 
       class RankSearch
-        include Attribute_selection_Utils 
+        include Utils
       end
 
       class ExhaustiveSearch
-        include Attribute_selection_Utils 
+        include Utils
       end
 
       class GeneticSearch
-        include Attribute_selection_Utils 
+        include Utils
       end
 
       class RaceSearch
-        include Attribute_selection_Utils 
+        include Utils
       end
 
       class RandomSearch
-        include Attribute_selection_Utils 
+        include Utils
       end
 
       class ScatterSearchV1
-        include Attribute_selection_Utils 
+        include Utils
       end
 
     end 

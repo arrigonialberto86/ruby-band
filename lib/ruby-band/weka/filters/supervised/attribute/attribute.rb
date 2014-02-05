@@ -1,14 +1,9 @@
-$:.unshift(File.expand_path(File.join(File.dirname(__FILE__),"../")))
-require 'java'
-require 'supervised_utils'
+require 'ruby-band/weka/filters/supervised/utils'
 
 module Weka
-  module Filter
+  module Filters
   	module Supervised
   		module Attribute
-  			java_import "weka.core.Utils"
-  			java_import "weka.filters.Filter"
-
         java_import "weka.filters.supervised.attribute.AddClassification"
         java_import "weka.filters.supervised.attribute.ClassOrder"
    			java_import "weka.filters.supervised.attribute.AttributeSelection"
@@ -16,39 +11,39 @@ module Weka
         java_import "weka.filters.supervised.attribute.PLSFilter"
         java_import "weka.filters.supervised.attribute.Discretize"
 
-        class AddClassification  
-          include Supervised_Util
+        class AddClassification
+          include Weka::Filters::Supervised::Utils
         end
 
    			class AttributeSelection
-          include Supervised_Util
+          include Weka::Filters::Supervised::Utils
+
           java_alias :evaluator, :setEvaluator, [Java::Weka.attributeSelection.ASEvaluation]
           java_alias :search, :setSearch, [Java::Weka.attributeSelection.ASSearch]
   			end
 
         class ClassOrder
-          include Supervised_Util
+          include Weka::Filters::Supervised::Utils
         end
 
         class Discretize  
-          include Supervised_Util
+          include Weka::Filters::Supervised::Utils
         end
 
         class NominalToBinary  
-          include Supervised_Util
+          include Weka::Filters::Supervised::Utils
         end
 
         class PLSFilter  
-          include Supervised_Util
+          include Weka::Filters::Supervised::Utils
         end
 
-        Weka::Filter::Supervised::Attribute::AttributeSelection.__persistent__ = true
-        Weka::Filter::Supervised::Attribute::Discretize.__persistent__ = true
-        Weka::Filter::Supervised::Attribute::AddClassification.__persistent__ = true
-        Weka::Filter::Supervised::Attribute::ClassOrder.__persistent__ = true
-        Weka::Filter::Supervised::Attribute::NominalToBinary.__persistent__ = true
-        Weka::Filter::Supervised::Attribute::PLSFilter.__persistent__ = true
-  			
+        Weka::Filters::Supervised::Attribute::AttributeSelection.__persistent__ = true
+        Weka::Filters::Supervised::Attribute::Discretize.__persistent__ = true
+        Weka::Filters::Supervised::Attribute::AddClassification.__persistent__ = true
+        Weka::Filters::Supervised::Attribute::ClassOrder.__persistent__ = true
+        Weka::Filters::Supervised::Attribute::NominalToBinary.__persistent__ = true
+        Weka::Filters::Supervised::Attribute::PLSFilter.__persistent__ = true
   		end
   	end
   end

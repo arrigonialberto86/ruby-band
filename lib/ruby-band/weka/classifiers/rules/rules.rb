@@ -1,15 +1,11 @@
-$:.unshift File.dirname(__FILE__)
+require 'ruby-band/weka/classifiers/class_builder'
 
-require_relative '../class_builder'
-
-#
-# The Weka::Classifier::Rules module contains classifiers from the 'weka.classifiers.rules' package
+# The Weka::Classifiers::Rules module contains classifiers from the 'weka.classifiers.rules' package
 # New weka classes can be defined by adding them to the build_classes method.
-#
 module Weka
-  module Classifier
+  module Classifiers
     module Rules
-      include ClassBuilder::Classifiers
+      include ClassBuilder
 
       build_classes :DTNB,
                     :DecisionTable,
