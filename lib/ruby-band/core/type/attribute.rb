@@ -34,17 +34,15 @@ module Core
     def self.create_nominal_attr(name_of_attr,values_list)
     	labels = FastVector.new
     	values_list.each {|value| labels.addElement(value)}
-    	nominal = Attribute.new(name_of_attr,labels)  
-    	return nominal
+    	Attribute.new(name_of_attr,labels)
     end
 
     # Return a String Attribute class object
     # * *Args*    :
     #   - +name_of_attr+ -> a String, the name of the attribute 
     def self.create_string_attr(name_of_attr)
-        construct = Attribute.java_class.constructor(Java::java.lang.String,Java::weka.core.FastVector)
-        string = construct.new_instance(name_of_attr,nil).to_java
-    	return string
+      construct = Attribute.java_class.constructor(Java::java.lang.String)
+      construct.new_instance(name_of_attr).to_java
     end
   end
 

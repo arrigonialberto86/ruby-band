@@ -23,7 +23,7 @@ Then(/^I want to filter them using the unsupervised filter "(.*?)"$/) do |arg1|
 end
 
 Then(/^I want to build a "(.*?)" classifier using training set data$/) do |arg1|
-  $bayes = Weka::Classifiers::Bayes::ComplementNaiveBayes::Base.new do
+  $bayes = Weka::Classifiers::Bayes::NaiveBayes::Base.new do
     set_data $filtered_training_set
     set_class_index 0
   end

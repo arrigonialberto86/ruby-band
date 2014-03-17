@@ -1,5 +1,5 @@
 require 'ruby-band/core/type/instances'
-require 'ruby-band/core/type/instance'
+require 'ruby-band/core/type/dense_instance'
 require 'ruby-band/core/parser/parser'
 require 'ruby-band/core/type/utils'
 require 'ruby-band/core/type/attribute'

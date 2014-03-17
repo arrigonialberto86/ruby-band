@@ -12,7 +12,7 @@ module Core
     java_import 'weka.core.converters.CSVSaver'
     java_import 'weka.core.converters.ArffSaver'
     java_import "weka.core.FastVector"
-    java_import "weka.core.Instance"
+    java_import "weka.core.DenseInstance"
 
     #
     # * *Description*    :
@@ -197,12 +197,15 @@ module Core
       # * *Args*    :
       #   - +instance+ -> an array of values of the correct data type (:nominal,:numeric,etc...)
       def add_instance(instance)
-        data_ref=Array.new
+        data_ref = Array.new
+
         instance.each_with_index do |attribute,idx|
           data_ref << insert_attribute(attribute,idx)
         end
+
         double_array = data_ref.to_java :double
-        single_row = Instance.new(1.0, double_array)
+        single_row = DenseInstance.new(1.0, double_array)
+
         self.add(single_row)
       end
 

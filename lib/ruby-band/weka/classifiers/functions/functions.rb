@@ -7,17 +7,17 @@ module Weka
     module Functions
       include ClassBuilder
 
-      build_classes :LinearRegression,
-                    :PLSClassifier,
-                    :RBFNetwork,
-                    :GaussianProcesses,
-                    :LeastMedSq,
-                    :LibSVM,
+      build_classes :GaussianProcesses,
+                    :LinearRegression,
+                    :Logistic,
+                    :MultilayerPerceptron,
+                    :SGD,
+                    :SGDText,
+                    :SimpleLinearRegression,
+                    :SimpleLogistic,
                     :SMO,
                     :SMOreg,
-                    :SPegasos,
-                    :VotedPerceptron,
-                    :Winnow
+                    :VotedPerceptron
     end
   end
 end

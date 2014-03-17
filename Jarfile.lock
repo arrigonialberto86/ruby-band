@@ -1,5 +1,6 @@
 org.sonatype.aether:aether-api:jar:1.1
-nz.ac.waikato.cms.weka:weka-stable:jar:3.6.10
+nz.ac.waikato.cms.weka:weka-dev:jar:3.7.10
+org.pentaho.pentaho-commons:pentaho-package-manager:jar:1.0.8
 net.sf.squirrel-sql.thirdparty-non-maven:java-cup:jar:0.11a
 org.apache.commons:commons-math3:jar:3.0
 junit:junit:jar:3.8.1

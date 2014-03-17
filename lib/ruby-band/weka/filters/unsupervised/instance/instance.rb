@@ -3,35 +3,30 @@ require 'ruby-band/weka/filters/unsupervised/utils'
 module Weka
   module Filters
   	module Unsupervised
-  		module Instance
-  			java_import "weka.filters.unsupervised.instance.Normalize"
-  			java_import "weka.filters.unsupervised.instance.NonSparseToSparse"
-  			java_import "weka.filters.unsupervised.instance.SparseToNonSparse"
-  			java_import "weka.filters.unsupervised.instance.RemoveRange"
-  			java_import "weka.filters.unsupervised.instance.SubsetByExpression"
+      module Instance
+        java_import "weka.filters.unsupervised.instance.NonSparseToSparse"
+        java_import "weka.filters.unsupervised.instance.RemoveRange"
         java_import "weka.filters.unsupervised.instance.RemoveWithValues"
+        java_import "weka.filters.unsupervised.instance.SparseToNonSparse"
+        java_import "weka.filters.unsupervised.instance.SubsetByExpression"
 
-  			class Normalize
+        class NonSparseToSparse
           include Weka::Filters::Unsupervised::Utils
-  			end
+        end
 
-  			class NonSparseToSparse
+        class RemoveRange
           include Weka::Filters::Unsupervised::Utils
-  			end
-
-  			class RemoveRange
-          include Weka::Filters::Unsupervised::Utils
-  			end
+        end
 
         class RemoveWithValues
           include Weka::Filters::Unsupervised::Utils
         end
 
-  			class SparseToNonSparse
+        class SparseToNonSparse
           include Weka::Filters::Unsupervised::Utils
-  			end
+        end
 
-  			class SubsetByExpression
+        class SubsetByExpression
           include Weka::Filters::Unsupervised::Utils
 
           def description
@@ -40,10 +35,15 @@ module Weka
             rescue NoMethodError
               puts "Sorry, no description available for this filter"
             end
-  				end
-  			end
+          end
+        end
 
-  		end
-  	end
+        Weka::Filters::Unsupervised::Instance::NonSparseToSparse.__persistent__ = true
+        Weka::Filters::Unsupervised::Instance::RemoveRange.__persistent__ = true
+        Weka::Filters::Unsupervised::Instance::RemoveWithValues.__persistent__ = true
+        Weka::Filters::Unsupervised::Instance::SparseToNonSparse.__persistent__ = true
+        Weka::Filters::Unsupervised::Instance::SubsetByExpression.__persistent__ = true
+      end
+    end
   end
 end

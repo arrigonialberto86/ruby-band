@@ -8,11 +8,9 @@ module Weka
     module Lazy
       include ClassBuilder
 
-      build_classes :KStar,
-                    :LWL,
-                    :LBR,
-                    :IB1,
-                    :IBk
+      build_classes :IBk,
+                    :KStar,
+                    :LWL
     end
   end
 end
