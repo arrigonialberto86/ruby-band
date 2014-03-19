@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["arrigonialberto86"]
-  s.date = "2014-02-01"
+  s.date = "2014-03-19"
   s.description = "Data mining and machine learning algorithms for JRuby "
   s.email = "arrigonialberto86@gmail.com"
   s.executables = ["ruby-band"]
@@ -52,6 +52,7 @@ Gem::Specification.new do |s|
     "features/step_definitions/weka_parsers.rb",
     "features/step_definitions/weka_pipeline.rb",
     "features/support/env.rb",
+    "features/weka_classifier_evaluation.feature",
     "features/weka_classifiers.feature",
     "features/weka_clustering.feature",
     "features/weka_filters.feature",
@@ -66,7 +67,7 @@ Gem::Specification.new do |s|
     "lib/ruby-band/core/parser/parser.rb",
     "lib/ruby-band/core/type/apache_matrices.rb",
     "lib/ruby-band/core/type/attribute.rb",
-    "lib/ruby-band/core/type/instance.rb",
+    "lib/ruby-band/core/type/dense_instance.rb",
     "lib/ruby-band/core/type/instances.rb",
     "lib/ruby-band/core/type/utils.rb",
     "lib/ruby-band/weka.rb",
@@ -76,9 +77,9 @@ Gem::Specification.new do |s|
     "lib/ruby-band/weka/classifiers/bayes/bayes.rb",
     "lib/ruby-band/weka/classifiers/class_builder.rb",
     "lib/ruby-band/weka/classifiers/evaluation.rb",
+    "lib/ruby-band/weka/classifiers/evaluation/threshold_curve.rb",
     "lib/ruby-band/weka/classifiers/functions/functions.rb",
     "lib/ruby-band/weka/classifiers/lazy/lazy.rb",
-    "lib/ruby-band/weka/classifiers/mi/mi.rb",
     "lib/ruby-band/weka/classifiers/rules/rules.rb",
     "lib/ruby-band/weka/classifiers/trees/trees.rb",
     "lib/ruby-band/weka/classifiers/utils.rb",
@@ -107,7 +108,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/arrigonialberto86/ruby-band"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.2.1"
+  s.rubygems_version = "2.2.2"
   s.summary = "Data mining algorithms for JRuby"
 
   if s.respond_to? :specification_version then
