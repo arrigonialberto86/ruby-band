@@ -12,6 +12,8 @@ module Weka
         java_import "weka.filters.unsupervised.attribute.NominalToString"
         java_import "weka.filters.unsupervised.attribute.Normalize"
         java_import "weka.filters.unsupervised.attribute.Remove"
+        java_import "weka.filters.unsupervised.attribute.RemoveUseless"
+        java_import "weka.filters.unsupervised.attribute.ReplaceMissingValues"
         java_import "weka.filters.unsupervised.attribute.Standardize"
         java_import "weka.filters.unsupervised.attribute.PrincipalComponents"
         java_import "weka.filters.unsupervised.attribute.StringToWordVector"
@@ -62,7 +64,15 @@ module Weka
           def setAttributeIndices(index)
             setAttributeIndices(index)
           end
-  			end
+        end
+
+        class RemoveUseless
+          include Weka::Filters::Unsupervised::Utils
+        end
+
+        class ReplaceMissingValues
+          include Weka::Filters::Unsupervised::Utils
+        end
 
         class Standardize
           include Weka::Filters::Unsupervised::Utils
@@ -78,6 +88,8 @@ module Weka
         Weka::Filters::Unsupervised::Attribute::ClusterMembership.__persistent__ = true
         Weka::Filters::Unsupervised::Attribute::Standardize.__persistent__ = true
         Weka::Filters::Unsupervised::Attribute::Remove.__persistent__ = true
+        Weka::Filters::Unsupervised::Attribute::RemoveUseless.__persistent__ = true
+        Weka::Filters::Unsupervised::Attribute::ReplaceMissingValues.__persistent__ = true
         Weka::Filters::Unsupervised::Attribute::Normalize.__persistent__ = true
         Weka::Filters::Unsupervised::Attribute::Discretize.__persistent__ = true
         Weka::Filters::Unsupervised::Attribute::Center.__persistent__ = true
