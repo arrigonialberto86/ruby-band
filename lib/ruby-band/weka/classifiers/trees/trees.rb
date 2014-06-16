@@ -7,15 +7,14 @@ module Weka
     module Trees
       include ClassBuilder
 
-      build_classes :J48,
-                    :FT,
-                    :RandomForest,
-                    :BFTree,
-                    :J48graft,
-                    :LADTree,
+      build_classes :DecisionStump,
+                    :HoeffdingTree,
+                    :J48,
                     :LMT,
                     :M5P,
-                    :RandomTree
+                    :RandomForest,
+                    :RandomTree,
+                    :REPTree
     end
   end
 end

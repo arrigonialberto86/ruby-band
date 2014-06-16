@@ -2,12 +2,8 @@ Given(/^the example ARFF file "(.*?)"$/) do |arff_file|
   @arff = File.join('resources',arff_file)
 end
 
-Given(/^the Weka Attribute Add filter$/) do
-  @filter = Weka::Filters::Unsupervised::Attribute::Add.new
-end
-
-Given(/^the Weka Attribute NominalToBinary filter$/) do
-  @filter = Weka::Filters::Supervised::Attribute::NominalToBinary.new
+Given(/^the Weka (.*) (.*) (.*) filter$/) do |type, attr_or_instance, class_name|
+  @filter = "Weka::Filters::#{type}::#{attr_or_instance}::#{class_name}".constantize.new
 end
 
 Then(/^I want to parse the file in order to create an Instances class object$/) do

@@ -8,13 +8,12 @@ Feature: Using a Weka classifier
     And I want to print an options list
 
   Examples: Classifiers
-    | classifier            |
-    | Bayes::NaiveBayes     |
-    | Lazy::KStar           |
-    | Trees::RandomForest   |
-    | Functions::RBFNetwork |
-    | Rules::DecisionTable  |
-    | Mi::CitationKNN       |
+    | classifier           |
+    | Bayes::NaiveBayes    |
+    | Lazy::KStar          |
+    | Trees::RandomForest  |
+    | Functions::Logistic  |
+    | Rules::DecisionTable |
 
 
   Scenario Outline: Use a classifier on a data instance
@@ -50,6 +49,8 @@ Feature: Using a Weka classifier
     And I want to get the weighted F-measure of the evaluation
     And I want to get the area under ROC of the evaluation with the class index
     And I want to get the weighted area under ROC of the evaluation
+    And I want to get the area under PRC of the evaluation with the class index
+    And I want to get the weighted area under PRC of the evaluation
     And I want to get the error rate of the evaluation
     And I want to get the instance count of the evaluation
     And I want to get the correct count of the evaluation
@@ -65,12 +66,12 @@ Feature: Using a Weka classifier
     And I want to get the average cost of the evaluation
 
   Examples: Classifiers
-    | classifier            | options | index | file                 |
-    | Bayes::NaiveBayes     | -K      | 0     | weather.numeric.arff |
-    | Lazy::KStar           | -M d    | 0     | weather.numeric.arff |
-    | Trees::RandomForest   | -I 10   | 0     | weather.numeric.arff |
-    | Functions::RBFNetwork |         | 0     | weather.numeric.arff |
-    | Rules::DecisionTable  |         | 0     | weather.numeric.arff |
+    | classifier           | options | index | file                 |
+    | Bayes::NaiveBayes    | -K      | 0     | weather.numeric.arff |
+    | Lazy::KStar          | -M d    | 0     | weather.numeric.arff |
+    | Trees::RandomForest  | -I 10   | 0     | weather.numeric.arff |
+    | Functions::Logistic  |         | 0     | weather.numeric.arff |
+    | Rules::DecisionTable |         | 0     | weather.numeric.arff |
 
   Scenario Outline: Use a classifier instanciated with a block on a data instance
     Given the unsupervised Weka classifier "<classifier>"
@@ -81,9 +82,9 @@ Feature: Using a Weka classifier
     Then I am able to instantiate the classifier with a block
 
   Examples: Classifiers
-    | classifier            | options | index | file                    |
-    | Bayes::NaiveBayes     | -K      | 0     | weather.numeric.arff    |
-    | Lazy::KStar           | -M d    | 0     | weather.numeric.arff    |
-    | Trees::RandomForest   | -I 10   | 0     | weather.numeric.arff    |
-    | Functions::RBFNetwork |         | 0     | weather.numeric.arff    |
-    | Rules::DecisionTable  |         | 0     | weather.numeric.arff    |
+    | classifier           | options | index | file                    |
+    | Bayes::NaiveBayes    | -K      | 0     | weather.numeric.arff    |
+    | Lazy::KStar          | -M d    | 0     | weather.numeric.arff    |
+    | Trees::RandomForest  | -I 10   | 0     | weather.numeric.arff    |
+    | Functions::Logistic  |         | 0     | weather.numeric.arff    |
+    | Rules::DecisionTable |         | 0     | weather.numeric.arff    |

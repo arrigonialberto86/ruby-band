@@ -7,11 +7,12 @@ module Weka
     module Bayes
       include ClassBuilder
 
-      build_classes :NaiveBayes,
-                    :BayesianLogisticRegression,
-                    :AODE,
-                    :ComplementNaiveBayes,
-                    :WAODE
+      build_classes :BayesNet,
+                    :NaiveBayes,
+                    :NaiveBayesMultinomial,
+                    :NaiveBayesMultinomialText,
+                    :NaiveBayesMultinomialUpdateable,
+                    :NaiveBayesUpdateable
     end
   end
 end

@@ -7,15 +7,12 @@ module Weka
     module Rules
       include ClassBuilder
 
-      build_classes :DTNB,
-                    :DecisionTable,
+      build_classes :DecisionTable,
+                    :DecisionTableHashKey,
                     :JRip,
                     :M5Rules,
-                    :NNge,
                     :OneR,
                     :PART,
-                    :Prism,
-                    :Ridor,
                     :Rule,
                     :RuleStats,
                     :ZeroR

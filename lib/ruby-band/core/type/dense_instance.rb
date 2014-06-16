@@ -2,9 +2,9 @@ module Core
   module Type
 
     java_import "weka.core.FastVector"
-    java_import "weka.core.Instance"
+    java_import "weka.core.DenseInstance"
 
-  	class Instance
-  	end
+    class DenseInstance
+    end
   end
 end
