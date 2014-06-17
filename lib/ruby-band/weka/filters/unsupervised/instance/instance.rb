@@ -1,34 +1,25 @@
-require 'ruby-band/weka/filters/unsupervised/utils'
+require 'ruby-band/weka/filters/unsupervised/class_builder'
 
 module Weka
   module Filters
   	module Unsupervised
       module Instance
-        java_import "weka.filters.unsupervised.instance.NonSparseToSparse"
-        java_import "weka.filters.unsupervised.instance.RemoveRange"
-        java_import "weka.filters.unsupervised.instance.RemoveWithValues"
-        java_import "weka.filters.unsupervised.instance.SparseToNonSparse"
-        java_import "weka.filters.unsupervised.instance.SubsetByExpression"
+        include ClassBuilder
 
-        class NonSparseToSparse
-          include Weka::Filters::Unsupervised::Utils
-        end
-
-        class RemoveRange
-          include Weka::Filters::Unsupervised::Utils
-        end
-
-        class RemoveWithValues
-          include Weka::Filters::Unsupervised::Utils
-        end
-
-        class SparseToNonSparse
-          include Weka::Filters::Unsupervised::Utils
-        end
+        build_classes :NonSparseToSparse,
+                      :Randomize,
+                      :RemoveFolds,
+                      :RemoveFrequentValues,
+                      :RemoveMisclassified,
+                      :RemovePercentage,
+                      :RemoveRange,
+                      :RemoveWithValues,
+                      :Resample,
+                      :ReservoirSample,
+                      :SparseToNonSparse,
+                      :SubsetByExpression
 
         class SubsetByExpression
-          include Weka::Filters::Unsupervised::Utils
-
           def description
             begin
               puts globalInfo.split("\n").each {|line| puts line}
@@ -38,11 +29,6 @@ module Weka
           end
         end
 
-        Weka::Filters::Unsupervised::Instance::NonSparseToSparse.__persistent__ = true
-        Weka::Filters::Unsupervised::Instance::RemoveRange.__persistent__ = true
-        Weka::Filters::Unsupervised::Instance::RemoveWithValues.__persistent__ = true
-        Weka::Filters::Unsupervised::Instance::SparseToNonSparse.__persistent__ = true
-        Weka::Filters::Unsupervised::Instance::SubsetByExpression.__persistent__ = true
       end
     end
   end
