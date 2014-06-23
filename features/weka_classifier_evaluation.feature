@@ -58,6 +58,7 @@ Feature: Evaluating a Weka classifier
     | Trees::RandomForest  | -I 10   | 0     | weather.numeric.arff |
     | Functions::Logistic  |         | 0     | weather.numeric.arff |
     | Rules::DecisionTable |         | 0     | weather.numeric.arff |
+    | Meta::LogitBoost     |         | 0     | weather.numeric.arff |
 
   Scenario: Receiving performance curve data of a classifier
     Given the unsupervised Weka classifier "Trees::RandomForest"

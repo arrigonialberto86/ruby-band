@@ -14,6 +14,7 @@ Feature: Using a Weka classifier
     | Trees::RandomForest  |
     | Functions::Logistic  |
     | Rules::DecisionTable |
+    | Meta::LogitBoost     |
 
 
   Scenario Outline: Use a classifier on a data instance
@@ -72,6 +73,7 @@ Feature: Using a Weka classifier
     | Trees::RandomForest  | -I 10   | 0     | weather.numeric.arff |
     | Functions::Logistic  |         | 0     | weather.numeric.arff |
     | Rules::DecisionTable |         | 0     | weather.numeric.arff |
+    | Meta::LogitBoost     |         | 0     | weather.numeric.arff |
 
   Scenario Outline: Use a classifier instanciated with a block on a data instance
     Given the unsupervised Weka classifier "<classifier>"
@@ -88,3 +90,4 @@ Feature: Using a Weka classifier
     | Trees::RandomForest  | -I 10   | 0     | weather.numeric.arff    |
     | Functions::Logistic  |         | 0     | weather.numeric.arff    |
     | Rules::DecisionTable |         | 0     | weather.numeric.arff    |
+    | Meta::LogitBoost     |         | 0     | weather.numeric.arff |
