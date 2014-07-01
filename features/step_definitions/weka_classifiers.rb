@@ -63,11 +63,19 @@ Then(/^I want to cross validate the classifier$/) do
   @evaluation.should be_a Weka::Classifiers::Evaluation
 end
 
-And(/^I want to get the (.*?) of the evaluation\s?(.*?)$/) do |info, with_class_index|
+Then(/^I want to get the (.*?) of the evaluation\s?(.*?)$/) do |info, with_class_index|
   method_name = info.downcase.strip.gsub(/[ -]/, '_').to_sym
   @evaluation.should respond_to method_name
 
   information = @evaluation.send(method_name) if with_class_index.blank?
   information = @evaluation.send(method_name, @class_index.to_i) unless with_class_index.blank?
   information.should_not be_blank
+end
+
+Then(/^I want to get the performance curves of the classifier$/) do
+  threshold_curve = Weka::Classifiers::Evaluation::ThresholdCurve.new
+  instances = threshold_curve.curve(@evaluation.predictions, 0) # 'yes' class
+
+  puts "Performance values:", instances
+  instances.should be_a Core::Type::Instances
 end
