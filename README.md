@@ -169,7 +169,7 @@ filtered_dataset = filter.use
 ```
 The returned Instances class object stores the results of the analysis we performed on the initial data.
 
-##Classifiers
+## Classifiers
 
 Classification and regression algorithms in WEKA are called “classifiers” and are located below the Weka::Classifier:: module. Currently, ruby-band only supports batch-trainable classifiers: this means they get trained on the whole dataset at once.
 
@@ -201,7 +201,7 @@ evaluator = Weka::Classifier::Evaluation.new $filtered_dataset
 puts evaluator.evaluate_model(classifier,test_data)
 ```
 
-###Classifying instances
+### Classifying instances
 In case you have an unlabeled dataset that you want to classify with your newly trained classifier, you can use the following code snippet.
 ```ruby
 # 'unlabeled' is a dataset with class index set, but no class value
@@ -213,7 +213,7 @@ end
 unlabeled.to_ARF/to_CSV 'my_file.arff' # save dataset with inserted class values
 ```
 
-##Clusterers
+## Clusterers
 
 Clustering is an unsupervised Machine Learning technique of finding patterns in the data, i.e., these algorithms work without class attributes. Classifiers, on the other hand, are supervised and need a class attribute. This section, similar to the one about classifiers, covers the following topics:
 * Building a clusterer - batch (incremental must still be implemented) learning. 
